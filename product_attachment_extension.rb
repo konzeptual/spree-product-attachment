@@ -14,6 +14,9 @@ class ProductAttachmentExtension < Spree::Extension
   
   def activate
 
+    Product.class_eval do 
+      has_many :downloadables, :as => :viewable, :order => :position, :dependent => :destroy
+    end
     # make your helper avaliable in all views
     # Spree::BaseController.class_eval do
     #   helper YourHelper

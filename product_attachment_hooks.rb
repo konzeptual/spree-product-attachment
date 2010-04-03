@@ -1,5 +1,7 @@
 class ProductAttachmentHooks < Spree::ThemeSupport::HookListener
 
+  insert_after :admin_product_tabs, "admin/shared/product_downloadables_tab"
+
   #
   # In this file you can modify the content of the hooks available in the default templates
   # and avoid overriding a template in many situations. Multiple extensions can modify the
