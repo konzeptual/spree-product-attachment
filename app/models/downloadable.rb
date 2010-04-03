@@ -62,7 +62,7 @@ class Downloadable < ProductDownload
        zip_downloadable.viewable_id = viewable_id
        zip_downloadable.viewable_type = viewable_type
        # zip_downloadable.download_limit = download_limit
-       zip_downloadable.description = "Zip file"
+       zip_downloadable.description = I18n::t('zip-file-description')
        zip_downloadable.attachment = File.new(bundle_fullpath)
        zip_downloadable.attachment_content_type = "application/zip"
        zip_downloadable.save
