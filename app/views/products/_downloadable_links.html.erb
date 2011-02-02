@@ -2,7 +2,7 @@
 <br /><br />
 
 <% if @product.downloadables.blank? -%>
-  <strong><%= t 'download_not_available' %></strong>
+  <strong><%= t('download_not_available').html_safe %></strong>
 <% else -%>
   <ul>
     <% @product.downloadables.each do |downloadable| %>
