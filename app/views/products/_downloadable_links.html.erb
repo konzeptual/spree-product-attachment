@@ -12,7 +12,14 @@
 	<% extension_name.downcase! -%>
 	<%= link_to(image_tag("attachment_extension/icons/#{extension_name}.gif"),
 		    downloadable.attachment.url(:product),
-		    html_options = {:onClick => "javascript: _gaq.push(['_trackPageview', '#{downloadable.attachment.url(:product)}']);"}) %>
+		    html_options = {
+		      :onClick => "javascript:pageTracker._trackEvent('#{extension_name}',
+'Download',
+'#{downloadable.attachment.url(:product)}');
+ void(0);"
+		    }
+		    ) %>
+<!-- javascript: _gaq.push(['_trackPageview', '#{downloadable.attachment.url(:product)}']);"}) %> -->
 	<%= downloadable.description %>(<%= number_to_human_size(downloadable.attachment_file_size) %>)
       </li>
     <% end -%>
