@@ -6,6 +6,7 @@
 
   <div class="yui-u first">
 	<% form_for(:downloadable, :url => { :controller => 'downloadables', :action => 'create' }, :html => { :multipart => true }) do |f| %>
+	  	<%=f.error_messages%>
 	  	<fieldset>
 			<legend>New downloadable file</legend>
 			<% f.field_container :name do %>
