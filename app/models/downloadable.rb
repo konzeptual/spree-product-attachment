@@ -4,6 +4,7 @@ class Downloadable < ProductDownload
                     :url => "/downloadable/:id/:basename.:extension",
                     :path => ":rails_root/public/downloadable/:id/:basename.:extension"
 
+  validates_attachment_presence :attachment
   
   before_save :set_title
   after_save :create_zip, :unless => :zipfile?
